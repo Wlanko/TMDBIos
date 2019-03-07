@@ -320,7 +320,7 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" numberOfLines="17" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GMl-3w-KH1">
-                                                    <rect key="frame" x="0.0" y="0.0" width="320" height="283"/>
+                                                    <rect key="frame" x="8" y="0.0" width="312" height="283"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
@@ -330,7 +330,7 @@
                                                 <constraint firstItem="GMl-3w-KH1" firstAttribute="top" secondItem="SNW-5E-a6w" secondAttribute="top" id="Kyo-fT-z00"/>
                                                 <constraint firstAttribute="bottom" secondItem="GMl-3w-KH1" secondAttribute="bottom" id="Olj-Ez-cTd"/>
                                                 <constraint firstAttribute="trailing" secondItem="GMl-3w-KH1" secondAttribute="trailing" id="Vbp-uC-IQp"/>
-                                                <constraint firstItem="GMl-3w-KH1" firstAttribute="leading" secondItem="SNW-5E-a6w" secondAttribute="leading" id="lt9-O1-MEL"/>
+                                                <constraint firstItem="GMl-3w-KH1" firstAttribute="leading" secondItem="SNW-5E-a6w" secondAttribute="leading" constant="8" id="YuI-S2-Zll"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                         <connections>
