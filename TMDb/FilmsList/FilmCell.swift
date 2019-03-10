@@ -33,6 +33,6 @@ class FilmCell: UITableViewCell {
         title.text = film?.title
         desc.text = film?.overview
         date.text = film?.release_date
-        imgView.kf.setImage(with: URL(string: "https://image.tmdb.org/t/p/w500" + ((film?.poster_path)!)))
+        imgView.kf.setImage(with: URL(string: "https://image.tmdb.org/t/p/w500\(film!.poster_path!)"), placeholder: UIImage(named: "large_movie_poster"))
     }
 }

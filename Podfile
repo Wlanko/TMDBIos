@@ -6,6 +6,7 @@ target 'TMDb' do
   use_frameworks!
 
   pod 'Kingfisher'
+  pod 'Alamofire'
   # Pods for TMDb
 
   target 'TMDbTests' do

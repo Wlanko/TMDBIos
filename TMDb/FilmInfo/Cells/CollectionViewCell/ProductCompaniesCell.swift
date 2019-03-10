@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Kingfisher
 
 class ProductCompaniesCell: UICollectionViewCell {
     
@@ -15,9 +16,7 @@ class ProductCompaniesCell: UICollectionViewCell {
     
     func setData(filmEditor: ProductCompanies?){
         companyName.text = filmEditor?.name
+        companyImage.kf.setImage(with: URL(string: "https://image.tmdb.org/t/p/w500\(filmEditor?.logo_path ?? "")"), placeholder: UIImage(named: "prodCompanyPlaceholder"))
         
-        if filmEditor?.logo_path != nil{
-            companyImage.kf.setImage(with: URL(string: "https://image.tmdb.org/t/p/w500" + (filmEditor?.logo_path)!))
-        }
     }
 }

@@ -12,7 +12,6 @@
 		F201A28596379FDBD253B437 /* Pods_TMDb.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 871CBFE62DD3BF49844E7404 /* Pods_TMDb.framework */; };
 		F53AAE822218284000CAF9C8 /* FilmCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F53AAE812218284000CAF9C8 /* FilmCell.swift */; };
 		F58E4BD722298A2D000D0C53 /* FilmTitelCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F58E4BD622298A2D000D0C53 /* FilmTitelCell.swift */; };
-		F58E4BD922299E9F000D0C53 /* FilmInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = F58E4BD822299E9F000D0C53 /* FilmInfo.swift */; };
 		F58E4BDB222ACB63000D0C53 /* FilmDescCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F58E4BDA222ACB63000D0C53 /* FilmDescCell.swift */; };
 		F58E4BDD222AD49E000D0C53 /* FilmImageCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F58E4BDC222AD49E000D0C53 /* FilmImageCell.swift */; };
 		F58E4BDF222AD844000D0C53 /* FilmVoteCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F58E4BDE222AD844000D0C53 /* FilmVoteCell.swift */; };
@@ -20,6 +19,7 @@
 		F58E4BEF222C0306000D0C53 /* FilmCodable.swift in Sources */ = {isa = PBXBuildFile; fileRef = F58E4BEE222C0306000D0C53 /* FilmCodable.swift */; };
 		F58E4BF1222D23AE000D0C53 /* ProductCompaniesCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F58E4BF0222D23AE000D0C53 /* ProductCompaniesCell.swift */; };
 		F58E4BF4222D2999000D0C53 /* FilmInfoCodable.swift in Sources */ = {isa = PBXBuildFile; fileRef = F58E4BF3222D2999000D0C53 /* FilmInfoCodable.swift */; };
+		F59566CD223516E000C18167 /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = F59566CC223516E000C18167 /* NetworkManager.swift */; };
 		F59F4242220C812F00DD092A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F59F4241220C812F00DD092A /* AppDelegate.swift */; };
 		F59F4244220C812F00DD092A /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F59F4243220C812F00DD092A /* ViewController.swift */; };
 		F59F4247220C812F00DD092A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F59F4245220C812F00DD092A /* Main.storyboard */; };
@@ -61,7 +61,6 @@
 		F3651E820A598454074752AC /* Pods_TMDbUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TMDbUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		F53AAE812218284000CAF9C8 /* FilmCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilmCell.swift; sourceTree = "<group>"; };
 		F58E4BD622298A2D000D0C53 /* FilmTitelCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilmTitelCell.swift; sourceTree = "<group>"; };
-		F58E4BD822299E9F000D0C53 /* FilmInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilmInfo.swift; sourceTree = "<group>"; };
 		F58E4BDA222ACB63000D0C53 /* FilmDescCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilmDescCell.swift; sourceTree = "<group>"; };
 		F58E4BDC222AD49E000D0C53 /* FilmImageCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilmImageCell.swift; sourceTree = "<group>"; };
 		F58E4BDE222AD844000D0C53 /* FilmVoteCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilmVoteCell.swift; sourceTree = "<group>"; };
@@ -69,6 +68,8 @@
 		F58E4BEE222C0306000D0C53 /* FilmCodable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilmCodable.swift; sourceTree = "<group>"; };
 		F58E4BF0222D23AE000D0C53 /* ProductCompaniesCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductCompaniesCell.swift; sourceTree = "<group>"; };
 		F58E4BF3222D2999000D0C53 /* FilmInfoCodable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilmInfoCodable.swift; sourceTree = "<group>"; };
+		F58E4BFC223199D2000D0C53 /* 161855430_ef973c.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 161855430_ef973c.png; sourceTree = "<group>"; };
+		F59566CC223516E000C18167 /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
 		F59F423E220C812F00DD092A /* TMDb.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TMDb.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F59F4241220C812F00DD092A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F59F4243220C812F00DD092A /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -165,7 +166,6 @@
 			isa = PBXGroup;
 			children = (
 				F5FE518D22240923009494E5 /* FilmInfoViewController.swift */,
-				F58E4BD822299E9F000D0C53 /* FilmInfo.swift */,
 				F58E4BF3222D2999000D0C53 /* FilmInfoCodable.swift */,
 				F58E4BD5222989E5000D0C53 /* Cells */,
 			);
@@ -187,6 +187,14 @@
 				F58E4BF0222D23AE000D0C53 /* ProductCompaniesCell.swift */,
 			);
 			path = CollectionViewCell;
+			sourceTree = "<group>";
+		};
+		F58E4BFB223199C6000D0C53 /* images */ = {
+			isa = PBXGroup;
+			children = (
+				F58E4BFC223199D2000D0C53 /* 161855430_ef973c.png */,
+			);
+			path = images;
 			sourceTree = "<group>";
 		};
 		F59F4235220C812F00DD092A = {
@@ -215,6 +223,7 @@
 			isa = PBXGroup;
 			children = (
 				F59F4241220C812F00DD092A /* AppDelegate.swift */,
+				F59566CC223516E000C18167 /* NetworkManager.swift */,
 				F58E4BE2222BAA77000D0C53 /* SerialsList */,
 				F58E4BE0222BAA1D000D0C53 /* FilmsList */,
 				F58E4BE1222BAA48000D0C53 /* FilmInfo */,
@@ -222,6 +231,7 @@
 				F59F4248220C813200DD092A /* Assets.xcassets */,
 				F59F424A220C813200DD092A /* LaunchScreen.storyboard */,
 				F59F424D220C813200DD092A /* Info.plist */,
+				F58E4BFB223199C6000D0C53 /* images */,
 			);
 			path = TMDb;
 			sourceTree = "<group>";
@@ -384,12 +394,14 @@
 			);
 			inputPaths = (
 				"${PODS_ROOT}/Target Support Files/Pods-TMDb/Pods-TMDb-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
 				"${BUILT_PRODUCTS_DIR}/Kingfisher/Kingfisher.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputFileListPaths = (
 			);
 			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Kingfisher.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -474,6 +486,7 @@
 				F53AAE822218284000CAF9C8 /* FilmCell.swift in Sources */,
 				F58E4BDB222ACB63000D0C53 /* FilmDescCell.swift in Sources */,
 				F58E4BDF222AD844000D0C53 /* FilmVoteCell.swift in Sources */,
+				F59566CD223516E000C18167 /* NetworkManager.swift in Sources */,
 				F58E4BE6222BDC38000D0C53 /* FilmEditorStudiosCell.swift in Sources */,
 				F5FE518E22240923009494E5 /* FilmInfoViewController.swift in Sources */,
 				F58E4BD722298A2D000D0C53 /* FilmTitelCell.swift in Sources */,
@@ -482,7 +495,6 @@
 				F59F4244220C812F00DD092A /* ViewController.swift in Sources */,
 				F59F4242220C812F00DD092A /* AppDelegate.swift in Sources */,
 				F58E4BEF222C0306000D0C53 /* FilmCodable.swift in Sources */,
-				F58E4BD922299E9F000D0C53 /* FilmInfo.swift in Sources */,
 				F58E4BF4222D2999000D0C53 /* FilmInfoCodable.swift in Sources */,
 				F58E4BF1222D23AE000D0C53 /* ProductCompaniesCell.swift in Sources */,
 			);

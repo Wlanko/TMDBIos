@@ -24,6 +24,6 @@ class FilmImageCell: UITableViewCell {
     }
     
     func setData(filmImage: String){
-        iView.kf.setImage(with: URL(string: "https://image.tmdb.org/t/p/w500" + filmImage))
+        iView.kf.setImage(with: URL(string: "https://image.tmdb.org/t/p/w500\(filmImage)"), placeholder: UIImage(named: "backgroundPlaceholder"))
     }
 }

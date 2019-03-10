@@ -11,40 +11,25 @@ import UIKit
 class FilmViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
 
     @IBOutlet weak var tabelview: UITableView!
+    let apiManager = NetworkManager()
     
     var filmsList: FilmsList?
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        fetchFilms()
+        getFilms()
+    }
+        
+    func getFilms(){
+        apiManager.getMovies(callback: {(movies) in
+            self.filmsList = movies
+            DispatchQueue.main.async {
+                self.tabelview.reloadData()
+            }
+        })
     }
     
-    func  fetchFilms() {
-        let urlRequest = URLRequest(url: URL(string: "https://api.themoviedb.org/3/movie/popular?api_key=64e28959ab896eae16e8746c65fa2a18&page=1")!)
-        
-        let task = URLSession.shared.dataTask(with: urlRequest){ (data, response, error) in
-            
-            if error != nil{
-                print(error)
-                return
-            }
-            
-            do{
-                self.filmsList = try JSONDecoder().decode(FilmsList.self, from: data!)
-                
-                DispatchQueue.main.async{
-                    self.tabelview.reloadData()
-                }
-                
-            }catch let error {
-                print(error)
-            }
-            
-        }
-        
-        task.resume()
-    }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "filmCell", for: indexPath) as! FilmCell
@@ -59,7 +44,6 @@ class FilmViewController: UIViewController, UITableViewDelegate, UITableViewData
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let stB = UIStoryboard(name: "Main", bundle: nil)
         let vc = storyboard?.instantiateViewController(withIdentifier: "FilmInfoViewController") as! FilmInfoViewController
         let n : Int = indexPath.row
         let id = String(describing: filmsList?.results[n]!.id ?? 0)

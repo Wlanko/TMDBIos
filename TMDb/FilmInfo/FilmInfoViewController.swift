@@ -9,50 +9,56 @@
 import UIKit
 
 class FilmInfoViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
+    @IBOutlet weak var loadingLbl: UILabel!
     
     @IBOutlet weak var fITV: UITableView!
     
     var filmId: String?
-    var film : filmInfo?
-    var serialOrFilm: Bool? = false
+    var serialId: String?
+    var filmOrSerial: filmInfo?
+    let apiManager = NetworkManager()
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        fITV.isHidden = true
         
-        fetchFilm()
-    }
-    
-    func  fetchFilm() {
-        guard let fId = filmId else {return}
-        let urlRequest: URLRequest
-        if serialOrFilm != false{
-            urlRequest = URLRequest(url: URL(string: "https://api.themoviedb.org/3/tv/\(fId)?api_key=64e28959ab896eae16e8746c65fa2a18")!)
+        if filmId != nil{
+            getFilm()
         }
         else{
-            urlRequest = URLRequest(url: URL(string: "https://api.themoviedb.org/3/movie/\(fId)?api_key=64e28959ab896eae16e8746c65fa2a18")!)
+            getSerial()
         }
-        let task = URLSession.shared.dataTask(with: urlRequest){ (data, response, error) in
-            
-            if error != nil{
-                print(error)
-                return
-            }
-            
-            do{
-                self.film = try JSONDecoder().decode(filmInfo.self, from: data!)
-                
-                DispatchQueue.main.async{
-                    self.fITV.reloadData()
-                }
-                
-            }catch let error {
-                print(error)
-            }
-            
-        }
-        
-        task.resume()
     }
+    
+    
+    func getFilm(){
+        guard let filmId = filmId else {return}
+        apiManager.getMovie(filmId: filmId, callback: {(movieInfo) in
+            
+            self.filmOrSerial = movieInfo
+            DispatchQueue.main.async {
+                self.fITV.reloadData()
+                self.fITV.isHidden = false
+                self.loadingLbl.isHidden = true
+            }
+        })
+        
+    }
+    
+    func getSerial(){
+        guard let serialId = serialId else {return}
+        apiManager.getSerial(serialId: serialId, callback: {(serialInfo) in
+            
+            self.filmOrSerial = serialInfo
+            DispatchQueue.main.async {
+                self.fITV.reloadData()
+                self.fITV.isHidden = false
+                self.loadingLbl.isHidden = true
+            }
+        })
+        
+    }
+    
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return 5
@@ -62,31 +68,31 @@ class FilmInfoViewController: UIViewController, UITableViewDelegate, UITableView
         
         let cell = tableView.dequeueReusableCell(withIdentifier: "Vote", for: indexPath) as! FilmVoteCell
         
-        cell.setData(filmVote: self.film?.vote_average ?? 0)
+        cell.setData(filmVote: self.filmOrSerial?.vote_average ?? 0)
         
         switch indexPath.row {
         case 0:
             let imageCell = tableView.dequeueReusableCell(withIdentifier: "Image", for: indexPath) as! FilmImageCell
-            imageCell.setData(filmImage: self.film?.backdrop_path ?? "NONE")
+            imageCell.setData(filmImage: self.filmOrSerial?.backdrop_path ?? "NONE")
             return imageCell
             
         case 1:
             let titleCell = tableView.dequeueReusableCell(withIdentifier: "Title", for: indexPath) as! FilmTitelCell
-            if self.film?.title != nil{
-                titleCell.setData(filmTitel: self.film?.title ?? "NONE")
+            if self.filmOrSerial?.title != nil{
+                titleCell.setData(filmTitel: self.filmOrSerial?.title ?? "NONE")
             }
             else{
-                titleCell.setData(filmTitel: self.film?.name ?? "NONE")
+                titleCell.setData(filmTitel: self.filmOrSerial?.name ?? "NONE")
             }
             return titleCell
             
         case 3:
             let descCell = tableView.dequeueReusableCell(withIdentifier: "Desc", for: indexPath) as! FilmDescCell
-            descCell.setData(filmDesc: self.film?.overview ?? "NONE")
+            descCell.setData(filmDesc: self.filmOrSerial?.overview ?? "NONE")
             return descCell
         case 4:
             let editorsCell = tableView.dequeueReusableCell(withIdentifier: "Editors", for: indexPath) as! FilmEditorStudiosCell
-            editorsCell.setListOfCompanies(filmEditor: film?.production_companies ?? [])
+            editorsCell.setListOfCompanies(filmEditor: filmOrSerial?.production_companies ?? [])
             return editorsCell
             
         default:
