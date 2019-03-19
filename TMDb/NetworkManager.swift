@@ -13,8 +13,8 @@ class NetworkManager {
     
     let baseURL = "https://api.themoviedb.org/3"
     
-    func getMovies(callback: @escaping (FilmsList) -> Void) {
-        Alamofire.request(URL(string: "\(baseURL)/movie/popular?api_key=64e28959ab896eae16e8746c65fa2a18&page=1")!, method: .get).responseJSON { (response) in
+    func getMovies(page: Int, callback: @escaping (FilmsList) -> Void) {
+        Alamofire.request(URL(string: "\(baseURL)/movie/popular?api_key=64e28959ab896eae16e8746c65fa2a18&page=\(page)")!, method: .get).responseJSON { (response) in
             if response.error != nil{
                 print(response.error)
                 return
@@ -28,8 +28,8 @@ class NetworkManager {
         }
     }
     
-    func getSerials(callback: @escaping (FilmsList) -> Void) {
-        Alamofire.request(URL(string: "\(baseURL)/tv/popular?api_key=64e28959ab896eae16e8746c65fa2a18&page=1")!, method: .get).responseJSON { (response) in
+    func getSerials(page: Int, callback: @escaping (FilmsList) -> Void) {
+        Alamofire.request(URL(string: "\(baseURL)/tv/popular?api_key=64e28959ab896eae16e8746c65fa2a18&page=\(page)")!, method: .get).responseJSON { (response) in
             if response.error != nil{
                 print(response.error)
                 return

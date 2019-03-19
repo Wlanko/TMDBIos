@@ -33,6 +33,7 @@ class FilmCell: UITableViewCell {
         title.text = film?.title
         desc.text = film?.overview
         date.text = film?.release_date
-        imgView.kf.setImage(with: URL(string: "https://image.tmdb.org/t/p/w500\(film!.poster_path!)"), placeholder: UIImage(named: "large_movie_poster"))
+        ImageCache.default.memoryStorage.config.totalCostLimit = 100 * 1024 * 1024
+        imgView.kf.setImage(with: URL(string: "https://image.tmdb.org/t/p/w500\(film?.poster_path ?? "")"), placeholder: UIImage(named: "large_movie_poster"))
     }
 }

@@ -28,7 +28,7 @@ class SerialCell: UITableViewCell {
     func setDataSerial(serial: Films?){
         STitle.text = serial?.name
         SDesc.text = serial?.overview
-        SImgView.kf.setImage(with: URL(string: "https://image.tmdb.org/t/p/w500\(serial!.poster_path!)"), placeholder: UIImage(named: "large_movie_poster"))
+        SImgView.kf.setImage(with: URL(string: "https://image.tmdb.org/t/p/w500\(serial!.poster_path ?? "")"), placeholder: UIImage(named: "large_movie_poster"))
     }
 
 }
